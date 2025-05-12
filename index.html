@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Combate à Fome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>Faça a Diferença</h1>
+            <p>Plantando Sementes de Esperança</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#donate">Doe</a></li>
+                <li><a href="#volunteer">Voluntarie-se</a></li>
+                <li><a href="#login" class="login-btn">Entrar</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h2>Conectando doadores a quem precisa</h2>
+                <p>Uma plataforma para combater a fome e reduzir o desperdício de alimentos</p>
+                <div class="hero-buttons">
+                    <a href="#donate" class="btn primary">Quero Doar</a>
+                    <a href="#need-help" class="btn secondary">Preciso de Ajuda</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Nossos Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Distribuição de comida</h3>
+                    <p>Fornecer refeições e pacotes de alimentos para os necessitados.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Jardins Comunitários</h3>
+                    <p>Capacitando comunidades para cultivar seus próprios alimentos</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Educação Alimentar</h3>
+                    <p>Promover hábitos alimentares saudáveis e segurança alimentar</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Direitos</h3>
+                    <p>Sensibilizar e defender políticas que combatam a fome</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2>Como Funciona</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Cadastro</h3>
+                    <p>Doadores e beneficiários se cadastram na plataforma</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Publicação</h3>
+                    <p>Doadores publicam itens disponíveis para doação</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Conexão</h3>
+                    <p>Beneficiários encontram e reservam as doações</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Impacto</h3>
+                    <p>Juntos combatemos a fome e reduzimos o desperdício</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="donations" class="donations-section">
+            <h2>Doações Disponíveis</h2>
+            <div class="filter-container">
+                <select id="category-filter">
+                    <option value="all">Todas as categorias</option>
+                    <option value="food">Alimentos</option>
+                    <option value="clothes">Roupas</option>
+                    <option value="hygiene">Produtos de Higiene</option>
+                </select>
+                <input type="text" id="location-filter" placeholder="Filtrar por localização">
+            </div>
+            <div class="donations-grid" id="donations-grid">
+                <!-- Donations will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <section id="education" class="education-section">
+            <h2>Educação Alimentar</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Segurança Alimentar">
+                    <h3>Segurança Alimentar</h3>
+                    <p>Aprenda sobre práticas de segurança alimentar e nutrição</p>
+                    <a href="#" class="btn secondary">Ler Mais</a>
+                </div>
+                <div class="education-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Hortas Urbanas">
+                    <h3>Hortas Urbanas</h3>
+                    <p>Como cultivar alimentos em pequenos espaços</p>
+                    <a href="#" class="btn secondary">Ler Mais</a>
+                </div>
+                <div class="education-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Direitos Sociais">
+                    <h3>Direitos Sociais</h3>
+                    <p>Conheça seus direitos e políticas públicas</p>
+                    <a href="#" class="btn secondary">Ler Mais</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="impact-section">
+            <h2>Nosso Impacto</h2>
+            <div class="impact-stats">
+                <div class="stat">
+                    <div class="stat-number" id="meals-donated">0</div>
+                    <div class="stat-label">Refeições Doadas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="people-helped">0</div>
+                    <div class="stat-label">Pessoas Ajudadas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="donors-count">0</div>
+                    <div class="stat-label">Doadores</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="communities">0</div>
+                    <div class="stat-label">Comunidades Atendidas</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>Plataforma de combate à fome que conecta doadores a beneficiários, promovendo solidariedade e segurança alimentar.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#donate">Doar</a></li>
+                    <li><a href="#volunteer">Voluntariado</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>contato@fomezero.org</p>
+                <p>(11) 1234-5678</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Plataforma de Combate à Fome. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn primary">Entrar</button>
+                <p>Não tem uma conta? <a href="#register" id="register-link">Cadastre-se</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-register">Email</label>
+                    <input type="email" id="email-register" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-register">Senha</label>
+                    <input type="password" id="password-register" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-type">Tipo de Usuário</label>
+                    <select id="user-type" required>
+                        <option value="">Selecione...</option>
+                        <option value="donor">Doador</option>
+                        <option value="beneficiary">Beneficiário</option>
+                        <option value="volunteer">Voluntário</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn primary">Cadastrar</button>
+                <p>Já tem uma conta? <a href="#login" id="login-link">Faça login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Doação -->
+    <div id="donate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Publicar Doação</h2>
+            <form id="donate-form">
+                <div class="form-group">
+                    <label for="donation-type">Tipo de Doação</label>
+                    <select id="donation-type" required>
+                        <option value="">Selecione...</option>
+                        <option value="food">Alimento</option>
+                        <option value="clothes">Roupa</option>
+                        <option value="hygiene">Produto de Higiene</option>
+                        <option value="other">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="donation-description">Descrição</label>
+                    <textarea id="donation-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="donation-quantity">Quantidade</label>
+                    <input type="number" id="donation-quantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="donation-expiry">Validade (para alimentos)</label>
+                    <input type="date" id="donation-expiry">
+                </div>
+                <div class="form-group">
+                    <label for="donation-location">Localização</label>
+                    <input type="text" id="donation-location" required>
+                </div>
+                <button type="submit" class="btn primary">Publicar Doação</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
