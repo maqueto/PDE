@@ -1,0 +1,596 @@
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Você pode mudar para uma fonte mais específica */
+}
+
+:root {
+    --primary-color: #28a745; /* Verde - Cor principal para botões e destaques */
+    --secondary-color: #6c757d; /* Cinza - Cor secundária */
+    --light-color: #f8f9fa; /* Cinza claro - Para fundos de seção */
+    --dark-color: #343a40; /* Cinza escuro - Para texto principal */
+    --text-color: #212529;
+    --link-color: #007bff; /* Azul - Para links */
+    --white-color: #ffffff;
+    --border-color: #dee2e6; /* Cinza claro para bordas */
+    --danger-color: #dc3545; /* Vermelho para alertas/erros (não usado ainda) */
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+h1, h2, h3, h4 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+/* --- Utilitários --- */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 15px;
+}
+
+.hidden {
+    display: none !important; /* Para ocultar elementos via JS */
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin: 0.5rem 0.2rem;
+    color: var(--white-color);
+    text-decoration: none; /* Para links estilizados como botões */
+}
+
+.btn:hover {
+    text-decoration: none; /* Remove sublinhado no hover */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Verde um pouco mais escuro */
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Cinza um pouco mais escuro */
+}
+
+.btn-submit {
+    background-color: var(--link-color);
+}
+.btn-submit:hover {
+    background-color: #0056b3; /* Azul um pouco mais escuro */
+}
+
+.btn-link {
+    color: var(--link-color);
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Header / Navbar --- */
+.navbar {
+    background-color: var(--white-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Faz o header ficar fixo no topo */
+    top: 0;
+    z-index: 1000; /* Garante que fique sobre outros elementos */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.logo:hover {
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* --- Seções --- */
+section {
+    padding: 4rem 0;
+}
+
+/* Cor de fundo alternada para melhor visualização */
+section:nth-child(odd):not(.hero) { /* Não aplica no Hero */
+     background-color: var(--light-color);
+}
+
+
+/* --- Hero Section (#inicio) --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('placeholder-hero-bg.jpg') no-repeat center center/cover; /* Substitua pela sua imagem */
+    color: var(--white-color);
+    text-align: center;
+    padding: 6rem 0; /* Mais padding vertical */
+}
+
+.hero h1 {
+    color: var(--white-color);
+    margin-bottom: 1rem;
+    font-size: 3rem; /* Maior */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons .btn {
+    margin: 0 0.5rem;
+}
+
+/* --- Cadastro Section (#cadastro) --- */
+.cadastro-section h2,
+.cadastro-section p:first-of-type { /* Apenas o primeiro parágrafo da seção */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cadastro-options {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+}
+
+.cadastro-box {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+    flex-basis: 45%; /* Ocupa quase metade do espaço, com gap */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.cadastro-box h3 {
+    color: var(--primary-color);
+}
+
+.btn-register-donor,
+.btn-register-volunteer {
+    margin-top: 1rem;
+    background-color: var(--secondary-color);
+}
+.btn-register-donor:hover,
+.btn-register-volunteer:hover {
+    background-color: #5a6268;
+}
+
+/* Estilos básicos para os formulários (inicialmente ocultos) */
+.registration-form,
+.publish-donation-form,
+.login-section form {
+    margin-top: 2rem;
+    text-align: left;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--light-color);
+}
+
+.registration-form h4,
+.publish-donation-form h4,
+.login-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
+form input[type="search"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+form button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* --- Doações Section (#doacoes) --- */
+.doacoes-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Quebra em telas menores */
+    gap: 1rem;
+}
+
+#search-doacao {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    min-width: 250px; /* Largura mínima */
+    flex-grow: 1; /* Ocupa espaço disponível */
+    max-width: 400px; /* Limita largura máxima */
+}
+
+.lista-doacoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
+    gap: 1.5rem;
+    margin-top: 2rem; /* Espaço após formulário se visível */
+}
+
+.doacao-item {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.doacao-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.doacao-item p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.doacao-item p strong {
+    color: var(--dark-color);
+}
+
+.doacao-item button {
+    margin-top: 1rem;
+}
+
+/* --- Campanhas Section (#campanhas) --- */
+.lista-campanhas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.campanha-item {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem não ultrapasse a borda */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Organiza itens verticalmente */
+}
+
+.campanha-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+.campanha-item h3,
+.campanha-item p,
+.campanha-item .progress-bar,
+.campanha-item a {
+    padding: 0 1.5rem; /* Padding horizontal para o conteúdo */
+}
+
+.campanha-item h3 {
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+.campanha-item p {
+    font-size: 0.95rem;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+    margin-bottom: 1rem;
+}
+.campanha-item p:last-of-type { /* Último p antes do botão */
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.campanha-item a {
+    display: block; /* Ocupa a largura toda */
+    text-align: center;
+    padding: 0.8rem 1.5rem; /* Padding interno do botão */
+    margin: 1.5rem; /* Margem externa do botão */
+}
+
+/* Barra de Progresso */
+.progress-bar {
+    background-color: #e9ecef; /* Fundo da barra */
+    border-radius: 5px;
+    height: 20px;
+    width: calc(100% - 3rem); /* Ajusta largura por causa do padding */
+    margin: 0 1.5rem 1rem 1.5rem; /* Alinha com o padding */
+    overflow: hidden;
+    position: relative; /* Necessário para o texto dentro */
+}
+
+.progress {
+    background-color: var(--primary-color);
+    height: 100%;
+    border-radius: 5px 0 0 5px; /* Arredonda só no início */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: width 0.5s ease-in-out;
+}
+
+/* --- Educativo Section (#educativo) --- */
+.lista-conteudo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.conteudo-item {
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.conteudo-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.conteudo-item h3 {
+    padding: 1rem 1rem 0.5rem 1rem;
+    font-size: 1.2rem;
+}
+
+.conteudo-item p {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.conteudo-item .btn-link {
+    padding: 0 1rem 1rem 1rem;
+    display: block;
+}
+
+/* --- Relatórios Section (#relatorios) --- */
+.relatorios-section {
+     background-color: var(--dark-color); /* Fundo escuro para destaque */
+     color: var(--light-color);
+}
+.relatorios-section h2 {
+    color: var(--white-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.report-summary {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.report-card {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    flex-basis: 200px; /* Largura base */
+    flex-grow: 1; /* Ocupa espaço */
+    color: var(--white-color);
+}
+
+.report-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--light-color);
+}
+
+.report-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0; /* Remove margem inferior do parágrafo */
+}
+
+/* --- Login Section (#login) --- */
+.login-section {
+    max-width: 500px;
+    margin: 4rem auto; /* Centraliza a seção de login */
+    padding: 2rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-section p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem; /* Espaçamento antes do rodapé */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin: 0 0.8rem;
+}
+
+.footer-links a {
+    color: var(--light-color);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* --- Responsividade Básica --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+        text-align: center; /* Centraliza links no mobile */
+        background: #eee; /* Fundo para destacar */
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+
+    .hero {
+        padding: 4rem 0;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .cadastro-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cadastro-box {
+        flex-basis: 90%; /* Ocupa mais largura */
+        max-width: 400px; /* Limita largura máxima */
+    }
+
+    .doacoes-actions {
+        flex-direction: column;
+        align-items: stretch; /* Faz botão e busca ocuparem largura */
+    }
+    #search-doacao {
+        min-width: auto; /* Remove largura mínima */
+        width: 100%;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+}
